@@ -18,7 +18,7 @@ pipeline {
             steps{
                 sh "pwd"
                 sh "ls -l"
-                sh "chnod +x webapp.war"
+                sh "chmod +x webapp.war"
                 sh "docker build . -t nkasperskyi/webapp:v1.0"
             }
         }
