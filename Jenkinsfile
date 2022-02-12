@@ -18,7 +18,7 @@ pipeline {
             steps{
                 sh "pwd"
                 sh "ls -l"
-                sh "chmod +x webapp.war"
+                sh "sudo chmod +x webapp.war"
                 sh "docker build . -t nkasperskyi/webapp:v1.0"
             }
         }
