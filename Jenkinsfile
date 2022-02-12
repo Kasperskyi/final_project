@@ -1,10 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        label "Node 1"
+        }
     tools {
         maven "maven-3.6.3"
-    }
-    environment {
-        PATH = "/usr/bin/:$PATH"
     }
     stages {
         stage("git") {
@@ -23,16 +22,6 @@ pipeline {
             }
         }
         stage("Check docker") {
-            steps{
-                sh "sudo apt-get install docker -y"
-            }
-        }
-        stage("Check docker") {
-            steps{
-                sh "sudo apt-get install docker -y"
-            }
-        }
-        stage("Build docker image") {
             steps{
                 sh "sudo apt-get install docker -y"
             }
