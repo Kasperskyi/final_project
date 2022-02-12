@@ -19,5 +19,10 @@ pipeline {
                 sh "mvn clean install"
             }
         }
+        stage("Check docker") {
+            steps{
+                sh "sudo apt-get install docker -y"
+            }
+        }
     }
 }
