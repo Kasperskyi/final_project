@@ -11,7 +11,7 @@ pipeline {
         }
         stage("Check mvn") {
             steps{
-                sh "sudo apt-get install maven"
+                sh "sudo apt-get install maven -y"
             }
         }
         stage("build code") {
