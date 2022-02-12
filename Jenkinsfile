@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent Node 1
     environment {
         PATH = "/usr/bin/:$PATH"
     }
