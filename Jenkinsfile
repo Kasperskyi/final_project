@@ -16,9 +16,6 @@ pipeline {
         }        
         stage("Build docker image") {
             steps{
-                sh "pwd"
-                sh "ls -l"
-                sh "sudo chmod +x webapp.war"
                 sh "docker build . -t nkasperskyi/webapp:v1.0"
             }
         }
