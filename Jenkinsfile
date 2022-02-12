@@ -16,7 +16,7 @@ pipeline {
         }        
         stage("Build docker image") {
             steps{
-                sh "docker build -t nkasperskyi/webapp:v1.0"
+                sh "docker build . -t nkasperskyi/webapp:v1.0"
             }
         }
     }
