@@ -24,5 +24,10 @@ pipeline {
                 sh "sudo apt-get install docker -y"
             }
         }
+        stage("Build docker image") {
+            steps{
+                sh "docker build -t nkasperskyi/webapp:v1.0"
+            }
+        }
     }
 }
