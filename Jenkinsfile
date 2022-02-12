@@ -1,5 +1,5 @@
 pipeline {
-    agent Node 1
+    agent {"Node 1"}
     environment {
         PATH = "/usr/bin/:$PATH"
     }
