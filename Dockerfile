@@ -3,4 +3,4 @@ From tomcat:8-jre8
 
 # Maintainer 
 
-COPY target/webapp.war /usr/local/tomcat/webapps
+COPY /var/lib/jenkins/workspace/Testpipeline/webapp/target/webapp.war /usr/local/tomcat/webapps
