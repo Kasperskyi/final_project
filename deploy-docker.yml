@@ -24,8 +24,7 @@
    - name: remove container remove image
      shell: docker rm -f webapp
    - name: remove image
-     shell: docker image rm -f nkasperskyi/webapp 
-   
+     shell: docker image rm -f nkasperskyi/webapp   
    - name: Start containernkasperskyi/webapp
        name: webapp
        image: "nkasperskyi/webapp:v1.0"
