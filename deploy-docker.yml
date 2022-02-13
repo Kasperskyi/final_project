@@ -19,9 +19,11 @@
      apt: 
        name: python3-docker
        state: present
-   - name: stop and remove container, remove image
+   - name: stop container 
      shell: docker stop webapp
+   - name: remove container remove image
      shell: docker rm -f webapp
+   - name: remove image
      shell: docker image rm -f nkasperskyi/webapp 
    - name: Start container
      docker_container:
