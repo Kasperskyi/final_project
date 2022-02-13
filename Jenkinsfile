@@ -29,7 +29,7 @@ pipeline {
         }
         stage("Deploy to Webserver") {
             steps{
-                ansiblePlaybook credentialsId: 'Jenkins-master', disableHostKeyChecking: true, extras: 'v1.${BUILD_ID', installation: 'ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
+                ansiblePlaybook credentialsId: 'Jenkins-master', disableHostKeyChecking: true, extras: 'v1.${BUILD_ID}', installation: 'ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
             }
         }
         
