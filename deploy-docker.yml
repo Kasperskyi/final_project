@@ -32,17 +32,7 @@
        state: stopped
      loop: '{{ docker_info.containers }}'
    - name: Remove images
-     command: docker image rm -f nkasperskyi/webapp:latest
-   #- name: stop container 
-   #  shell: docker stop webapp
-   #- name: remove container remove image
-   #  shell: docker rm -f webapp
-   #- name: remove image
-   #  shell: docker image rm -f nkasperskyi/webapp   
+     command: docker image rm -f nkasperskyi/webapp:latest    
    - name: Start container nkasperskyi/webapp
      shell: docker run -d --rm -p 8090:8080 nkasperskyi/webapp:latest
-       #name: webapp
-       #image: "nkasperskyi/webapp:v1.0"
-       #state: started
-       #published_ports:
-       #  - 0.0.0.0:8090:8080
+       
