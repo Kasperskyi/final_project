@@ -19,8 +19,8 @@
      apt: 
        name: python3-docker
        state: present
-   - name: stop container 
-     shell: docker stop webapp
+   #- name: stop container 
+   #  shell: docker stop webapp
    - name: remove container remove image
      shell: docker rm -f webapp
    - name: remove image
