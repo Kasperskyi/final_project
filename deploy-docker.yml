@@ -31,8 +31,8 @@
        name: '{{ item.Names[0] | regex_replace("^/", "") }}'
        state: stopped
      loop: '{{ docker_info.containers }}'
-   - name: Remove images
+   - name: Remove previous image
      command: docker image rm -f nkasperskyi/webapp:latest    
-   - name: Start container nkasperskyi/webapp
+   - name: Start new container 
      shell: docker run -d --rm -p 8090:8080 nkasperskyi/webapp:latest
        
