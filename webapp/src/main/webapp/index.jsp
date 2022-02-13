@@ -1,3 +1,3 @@
-<h1> Final project </h1>
+<h1> Final project from Nazar Kasperskyi </h1>
 
 
