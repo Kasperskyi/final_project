@@ -26,10 +26,9 @@
    - name: remove image
      shell: docker image rm -f nkasperskyi/webapp 
    
-   #- name: Start container
-     #docker_container:
-       #name: webapp
-       #image: "nkasperskyi/webapp:v1.0"
-       #state: started
-       #published_ports:
-       #  - 0.0.0.0:8090:8080
+   - name: Start containernkasperskyi/webapp
+       name: webapp
+       image: "nkasperskyi/webapp:v1.0"
+       state: started
+       published_ports:
+         - 0.0.0.0:8090:8080
