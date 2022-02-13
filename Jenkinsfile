@@ -27,5 +27,11 @@ pipeline {
                 sh "docker push nkasperskyi/webapp:v1.0"
             }
         }
+        stage("Build docker image") {
+            steps{
+                ansiblePlaybook credentialsId: 'Jenkins-master', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
+            }
+        }
+        
     }
 }
