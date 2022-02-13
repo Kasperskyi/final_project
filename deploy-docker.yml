@@ -26,7 +26,7 @@
    - name: remove image
      shell: docker image rm -f nkasperskyi/webapp   
    - name: Start container nkasperskyi/webapp
-     shell: docker run -d --name webapp -p 8090:8080 nkasperskyi/webapp
+     shell: docker run -d --name webapp -p 8090:8080 nkasperskyi/webapp:v1.0
        #name: webapp
        #image: "nkasperskyi/webapp:v1.0"
        #state: started
