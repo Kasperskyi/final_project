@@ -19,7 +19,7 @@ pipeline {
                 sh "docker build . -t nkasperskyi/webapp:latest"
             }
         }
-        stage("Build push to Dockerhub") {
+        stage("Push image to Dockerhub") {
             steps{
                 withCredentials([string(credentialsId: 'docker-hub', variable: 'DockerHubPwd')]) {
                     sh "docker login -u nkasperskyi -p ${DockerHubPwd}"
