@@ -32,7 +32,7 @@
        state: stopped
      loop: '{{ docker_info.containers }}'
    - name: Remove images
-     command: docker image rm -f nkasperskyi/webapp:v1.0
+     command: docker image rm -f nkasperskyi/webapp:{{DOCKER_TAG}}
    #- name: stop container 
    #  shell: docker stop webapp
    #- name: remove container remove image
