@@ -16,7 +16,7 @@ pipeline {
         }        
         stage("Build docker image") {
             steps{
-                sh "docker build . -t nkasperskyi/webapp:v1.$BUILD_ID"
+                sh "docker build . -t nkasperskyi/webapp:latest"
             }
         }
         stage("Build push to Dockerhub") {
@@ -24,12 +24,12 @@ pipeline {
                 withCredentials([string(credentialsId: 'docker-hub', variable: 'DockerHubPwd')]) {
                     sh "docker login -u nkasperskyi -p ${DockerHubPwd}"
                     }
-                sh "docker push nkasperskyi/webapp:v1.$BUILD_ID"
+                sh "docker push nkasperskyi/webapp:latest"
             }
         }
         stage("Deploy to Webserver") {
             steps{
-                ansiblePlaybook credentialsId: 'Jenkins-master', disableHostKeyChecking: true, tags: 'v1.${BUILD_ID}', installation: 'ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
+                ansiblePlaybook credentialsId: 'Jenkins-master', disableHostKeyChecking: true, tags: 'latest', installation: 'ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
             }
         }
         
